@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Story+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Caveat", cursive;
+  background: #0b0f14;
+  color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 450px;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #141d30;
+  padding: 10px 16px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  font-family: "Story Script", sans-serif;
+}
+
+.bot__gif {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+
+.status {
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.chat {
+  flex: 1;
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #1f2937;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.chat::-webkit-scrollbar {
+  width: 6px;
+}
+.chat::-webkit-scrollbar-thumb {
+  background: #374151;
+  border-radius: 6px;
+}
+
+.msg {
+  padding: 10px 14px;
+  margin: 4px 0;
+  border-radius: 12px;
+  max-width: 80%;
+  line-height: 1.4;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.3s ease forwards;
+  white-space: pre-line;
+}
+
+.msg--user {
+  background: #6366f1;
+  color: #fff;
+  margin-left: auto;
+  border-radius: 16px 16px 0 16px;
+}
+
+.msg--agent {
+  background: #22d3ee;
+  color: #fff;
+  border-radius: 16px 16px 16px 0;
+}
+
+.msg--system {
+  background: #374151;
+  color: #9ca3af;
+  text-align: center;
+  font-size: 13px;
+  border-radius: 12px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mic {
+  padding: 14px 28px;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: #22c55e;
+  color: white;
+  transition: transform 0.2s ease, background 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mic:hover {
+  transform: scale(1.05);
+}
+
+.mic.recording {
+  background: #ef4444;
+  animation: pulse 1.2s infinite;
+}
+
+.mic.recording .mic__icon {
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239,68,68,0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(239,68,68,0); }
+  100% { box-shadow: 0 0 0 0 rgba(239,68,68,0); }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-6px); }
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#player { display: none; }

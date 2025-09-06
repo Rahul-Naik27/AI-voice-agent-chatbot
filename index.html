@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Voice Agent – Day 12</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <h1><img src="/static/robanimation.gif" alt="AI Bot" class="bot__gif" /> AI Voice Agent</h1>
+      <div id="status" class="status">idle</div>
+    </header>
+
+    <!-- Chat Section -->
+    <main id="chat" class="chat">
+      <div class="msg msg--system">👋 Say something and I'll respond.</div>
+    </main>
+
+    <!-- Controls -->
+    <footer class="controls">
+      <button id="recordBtn" class="mic">
+        <span class="mic__icon">🎤</span>
+        <span class="mic__label">Start</span>
+      </button>
+      <audio id="player" preload="auto"></audio>
+    </footer>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
